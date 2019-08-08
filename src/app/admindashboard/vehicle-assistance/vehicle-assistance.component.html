@@ -4,35 +4,45 @@
   <div class="row">
     
   
-    <div class="col-md-12" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
+    <div class="col-md-10" style="background-image:url('../assets/image/g.png');background-repeat:no-repeat;">
     <div class="row" style="background-color:white;color:black;width:102.7%;height:800px">
       <div class="" style="width:100%" >
         
       <div class="row">
         
         <div class="col-md-12">
-          <div class="container">
+          <div class="container"style="margin-left:100px">
             
             <div class="messaging">
-                  <div class="inbox_msg">
-                    <div class="inbox_people">
-                      <div class="headind_srch">
-                        
-                       
-                      </div>
-                      <a href=""></a>
-                      <div class="inbox_chat">
+                 
                         <div class="chat_list active_chat"  *ngFor="let breakdown of list">
                           <div class="chat_people">
                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                             <div class="chat_ib">
-                              <h5>{{breakdown.total}} <span class="chat_date">Dec 25</span></h5>
-                             
+                              <h5>Total price: Rs {{breakdown.total}} <span class="chat_date">Dec 25</span></h5>
+                              <div class="row">
+                                  <div class="col-md-4">
+                                    
+                                  </div>
+                                  <div class="col-md-4">
+                                  <div class="{{breakdown.Fillet}}">Fillet burger</div>
+                                  <div class="{{breakdown.charger}}">chicken charger</div>
+                                  <div class="{{breakdown.chickensub}}">chcicken submarine</div>
+                                 </div>
+                                  
+                                 <div class="col-md-4">
+                                    <div class="{{breakdown.orange}}">orange juice</div>
+                                    <div class="{{breakdown.apple}}">apple juice</div>
+                                    <div class="{{breakdown.capp}}">cappuchino</div>
+                                    
+                                   </div>
+                                  
+                                </div>
                             </div>
                             
                             <div style="margin-top:15px">
-                              <button class="btn btn-info btn-xs" style="text-align:right ;" (click)="showlocation(breakdown.id)">show order</button>
-                                  <button class="btn btn-success btn-xs" style="text-align:right;margin-left:5px " >order finished</button>
+                              <button class="btn btn-success btn-xs" style="text-align:right ;" (click)="showlocation(breakdown.id)">Order finished</button>
+                                 
                                   <h5 class="{{breakdown.status}}"><span class="badge badge-primary" style="float:right">New</span></h5>
                             </div>
                                   
@@ -45,11 +55,7 @@
                         
                       </div>
                     </div>
-                    <div class="mesgs">
-                      <div class="chat_list active_chat"  *ngFor="let breakdown of list">
-                        {{breakdown.id}}
-                      </div>
-                    </div>
+                   
                   </div>
             </div>
         </div>
@@ -59,9 +65,7 @@
 
 
 
-    </div>
-</div>
-</div>
+  
 
 
 <style>

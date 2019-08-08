@@ -56,15 +56,11 @@ export class VehicleAssistanceComponent implements OnInit {
     
   }
   showlocation(id:string){
-    console.log(id)
-    this.afs.collection('orders').doc(id).valueChanges().subscribe(val => {
-     
-      
-     });
+    
     
     let data = Object.assign({});
     data.status="seen";
-    this.firestore.collection('orders').doc(id).update(data);
+    this.firestore.collection('orders').doc(id).delete();
    
   }
   
