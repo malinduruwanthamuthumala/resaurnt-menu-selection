@@ -1,0 +1,141 @@
+
+<div class="container-fluid">
+  
+  <div class="row">
+    
+  
+    <div class="col-md-12">
+        <br>
+        <p class="border-bottom"><b>Dashboard/</b>Order your foods</p>
+    <div class="row">
+        <div class="col-md-6">
+         
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+             
+            <div>
+              <label for="" class="d-block p-2 bg-info text-white">tableID</label>
+             <select  id="table" class="form-control"  name="table"  [(ngModel)]='table'  (ngModelChange)="selectvehicletype()">
+               <option value="1" >1</option>
+               <option value="2" >2</option>
+               <option value="3" >3</option>
+               <option value="4" >4</option>
+             </select>
+            </div>
+            
+            <br>
+          
+              <div >
+                <label for="" class="d-block p-2 bg-info text-white" >contact number</label>
+               <input type="text" class="form-control" [(ngModel)]='tp' name="tp" id="resdate" >
+              </div>
+           
+           
+            <br>
+            <div class="d-block p-2 bg-info text-white">Special Chicken Fried rice</div> 
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="special" name="special" [(ngModel)]="special" (click)="changeInterior()" value="interior detailing" >
+                <label class="custom-control-label" for="special"><b>My burger special chicken fried rice</b></label>
+            </div>
+              <br>  
+              
+          
+            
+            
+            <div class="d-block p-2 bg-info text-white">Burgers and submarines</div> 
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="Fillet" name="Fillet" [(ngModel)]="Fillet" (click)="changecardInfo()" >
+                <label class="custom-control-label" for="Fillet"><b>Fillet Burger Meal</b> </label>
+                
+            </div>
+            
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="chickensub" name="chickensub" [(ngModel)]="chickensub" (click)="changetoundercariage()">
+                <label class="custom-control-label" for="chickensub"><b>Chicken submarine</b> </label>
+            </div>
+            
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="zinger" name="zinger" [(ngModel)]="zinger" (click)="changetyredress()">
+                <label class="custom-control-label" for="zinger"><b>Cheesy zinger stacker</b></label>
+            </div>
+            
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="charger" name="charger" [(ngModel)]="charger" (click)="changeExteriorax()" >
+                <label class="custom-control-label" for="charger"><b>chicken charger submarine</b> </label>
+            </div>
+          
+            <br>
+            <div class="d-block p-2 bg-info text-white">Beverages</div> 
+            <br>  
+            <div class="custom-control custom-checkbox">
+              
+                <input type="checkbox" class="custom-control-input" id="chock" name="chock" [(ngModel)]="chock" (click)="changeengineOilFilter()" >
+                <label class="custom-control-label" for="chock"><b>chocklate milkshake</b>  </label>
+            </div>
+            
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="apple" [(ngModel)]="apple" name="apple" (click)="EngineCleaning()" > 
+                <label class="custom-control-label" for="apple"><b>apple juice</b> </label>
+            </div>
+           
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="orange" name="orange" [(ngModel)]="orange" (click)="RadiatorcoolerntReplace()" >
+                <label class="custom-control-label" for="orange"><b>orange juice</b></label>
+            </div>
+            
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="capp" name="capp" [(ngModel)]="capp" (click)="EngineScan()" >
+                <label class="custom-control-label" for="capp"><b>cappuccino</b> </label>
+
+            </div>
+           <br>
+            <div>
+              <button type="submit" class="btn btn-success" [disabled]="formvalidity">RESERVE THE DATE</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-md-6">
+          <!-- Card -->
+<div class="card" style=" position: -webkit-sticky;
+position: sticky;
+top:30px;margin-left:70px;width:500px">
+
+  <!-- Card image -->
+  <img class="card-img-top" style="height:270px;width:500px" src="{{imgsrc}}">
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{cardtitle}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{textservice}}</p>
+    <p style="color:darkblue"><b>Charges LKR {{price}}.00</b> </p>
+   
+    <!-- Button -->
+  
+            <!-- Card -->
+<div class="card" >
+<h4>Total payement:LKR {{totalpayment}}.00</h4>
+
+</div>
+
+</div>
+<!-- Card -->
+        </div>
+    
+    </div>
+
+
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="container"  >
+    <div class="pt-3 pb-2 mb-3 ">
+        
+        <p class="border-bottom"><b>Dashboard/</b>Register vehicle</p>
+       </div>
+    <div class="jumbotron-fluid">
+        <form  autocomplete="on" #form="ngForm"  (submit)="onSubmit(form)">
+          <div class="alert alert-success" [hidden]="alertreg" >vehicle registerd successfully</div>
+          <div class="alert alert-danger" [hidden]="alertdel" >vehicle deleted successfully</div>
+            <div class="" >
+               
+                <input type="hidden" class="form-control" name="id" [(ngModel)]="service.FormData.id" id="id"  #id="ngModel">
+                
+              </div>
+            <div class="" >
+              <label for="">vehicle Registration Number</label>
+              <input type="text" class="form-control" name="Reg_no" [(ngModel)]="service.FormData.Reg_no" id="Reg_no" required #Reg_no="ngModel" ng-trim="true">
+              <div class="validation-error" *ngIf="Reg_no.invalid && Reg_no.touched" style="color:red">This field is required</div>
+            </div>
+            <br>
+                <div class="form-group">
+                <label for="">vehicle type</label>
+                
+                <select   class="form-control"  name="vehicle_type"  [(ngModel)]="service.FormData.vehicle_type" #vehicle_type="ngModel" required>
+                  <option value="motorcycle">motor cycle</option>
+                  <option value="threewheeler">three wheeler</option>
+                  <option value="Car (C class) licence">car (c class)</option>
+                  <option value="Light Rigid (LR class) heavy vehicle">Light Rigid (LR class) heavy vehicle</option>
+                  <option value="Medium Rigid (MR class) heavy vehicle">Medium Rigid (MR class) heavy vehicle</option>
+                  <option value="Special tractor ">tractor</option>
+                </select>
+                <div class="validation-error" *ngIf="vehicle_type.invalid && vehicle_type.touched" style="color:red">This field is required</div>
+              </div>
+        
+                <div class="form-group">
+                  <label for="">current odometer reading</label>
+                  <input  class="form-control"  name="Odometer_reading"  [(ngModel)]="service.FormData.Odometer_reading" id="Odometer_reading" required #Odometer_reading="ngModel" type="number">
+                  <div class="validation-error" *ngIf="Odometer_reading.invalid && Odometer_reading.touched" style="color:red">This field is required</div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="">Manufactured year</label>
+                    <input  type="month" class="form-control"  name="last_service_date"  [(ngModel)]="service.FormData.last_service_date" id="last_service_date" #last_service_date="ngModel">
+                    
+                </div>
+                <div class="form-group">
+                      <label for="">vehicle Model</label>
+                      <input   class="form-control"  name="model"  [(ngModel)]="service.FormData.model" id="model"  #model="ngModel" required>
+                      <div class="validation-error" *ngIf="model.invalid && model.touched" style="color:red">This field is required</div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                  <label for="">Image of your vehicle </label>
+                  <br>
+                  <input type="file"    name="imagemodel"  [(ngModel)]="service.FormData.imagemodel" id="imagemodel"  #imagemodel="ngModel" (change)="Photoselected($event)" required>
+                  <div class="validation-error" *ngIf="imagemodel.invalid && imagemodel.touched" style="color:red">This field is required</div>
+            </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">ADD VEHICLE</button>
+                </div>
+                <img src="{{imgurl}}" style="height:200px;width:300px" [hidden]='imagediv'>
+          </form>
+    </div>
+  
+</div>

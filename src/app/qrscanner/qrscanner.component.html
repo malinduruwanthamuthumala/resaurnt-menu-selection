@@ -1,0 +1,114 @@
+
+<div class="row" [hidden]="webcam">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+                <qr-scanner
+                [debug]="true"
+                [canvasWidth]="1080"
+                [canvasHeight]="720" 
+                [stopAfterScan]="true"
+                [updateTime]="500"> 
+                </qr-scanner>            
+        </div>
+        <div class="col-md-1"></div>
+</div>   
+<div class="row" style="margin-left:5px" >
+        
+        <div class="col-md-6"  [hidden]="reservationdiv">
+        <div class="col-md-12" [hidden]="alertbox" class="  text-white" style="margin-top:100px;margin-left:50px">
+        <h5 [hidden]="alertbox">sorry you have not placed any  reservations for today please check on your reservation dates</h5>
+        </div>
+        <br>
+        <div *ngFor="let service of service$ | async" >
+        <h3 style="color:red" [ngStyle]={color:colorstatus}>Status:   {{service.status}}</h3>
+        <label for="" class="">vehicle registration:<b>{{service.vehiclereg}}</b></label>
+        
+        <br>
+        <label for="" class="">Reservation date:<b>{{service.resdate}}</b></label>
+        
+        <br>
+        <label >Contact number:<b>{{service.tp}}</b></label>
+        <br>
+        <div class="card" *ngFor="let emp of list1" >
+                <button class="btn btn-danger" (click)="onsubmitready(emp.id)">ready to pickup</button>
+        </div>
+       
+        <br><br>
+        <label for="" class="d-block p-2 text-white bg-primary" >car wash package</label>
+        <div class="true" >{{service.defaultExampleRadios}}</div>
+      
+        
+        
+        <br>
+        <label for="" class="d-block p-2 text-white bg-primary" >other pusrchases</label>
+        <div class="{{service.lubrication1}} ">lubrication service </div>
+        
+        <div class="{{service.tyredashdress}} " >Tyre dressing </div>
+        
+        <div class="{{service.engine_oil_and_filter_change}} " >Engine oil and filter change </div>
+        
+        <div class="{{service.engineclean}} " >Engine cleaning </div>
+        
+        <div class="{{service.flushreplace}} " >Flush replacement  </div>
+        <div class="{{service.enginescan}} " >Engine scan </div>
+        
+        <div class="{{service.exteriorwax}} " >Exterior waxing  </div>
+        
+        <div class="{{service.interior}} " >Interior services  </div>
+
+       
+        </div>
+        
+        </div>
+        <div class="col-md-5">
+                  <!-- Card -->
+                        <div class="card" style=" position: -webkit-sticky;
+                        position: sticky;
+                        top:30px;margin-left:70px;width:430px;margin-top:50px">
+                        <div *ngFor="let vehicle of vehicle$ | async">
+                        <!-- Card image -->
+                        <img class="card-img-top" style="height:270px;width:430px" src="{{vehicle.imgurl}}">
+                                <hr>
+                        <!-- Card content -->
+                        <div class="card-body bg-dark" style="color:white">
+                        <div>
+                                        <label for="" class="">vehicle registration number:<b>{{vehicle.Reg_no}}</b></label>
+                                        <br>
+                                        <label for="" class="">vehicle model:<b>{{vehicle.model}}</b></label>
+                                        <br>
+                                        <label for="" class="">manufactured year:<b>{{vehicle.last_service_date}}</b></label>
+                                        <br>
+                                        <label for="" class="">previous service odometer reading<b>{{vehicle.Odometer_reading}}</b></label>
+                                        <br>
+                                                        
+                                                        
+                                                            
+                        </div>
+                        </div>
+                        </div>
+                </div>
+                <!-- Card -->
+            
+</div>
+<style>
+.true{
+        background-color:#239B56;
+        height:40px;
+        width:400px;
+        color:white;
+        
+}
+.false{
+background-color:#CB4335    ;
+height:40px;
+width:400px;
+color:white;
+
+display: none;
+}
+div{
+        margin-top:3px;
+}
+</style>
+
+
