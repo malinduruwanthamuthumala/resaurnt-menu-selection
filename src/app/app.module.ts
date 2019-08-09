@@ -14,9 +14,9 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AuthService } from "./shared/services/auth.service";
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomepageComponent } from './homepage/homepage.component';
+
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { ProfileComponent } from './customerdashboard/profile/profile.component';
+
 import { VehiclesComponent } from './customerdashboard/vehicles/vehicles.component';
 import { VehicleComponent } from './customerdashboard/vehicles/vehicle/vehicle.component';
 import { VehicleListComponent } from './customerdashboard/vehicles/vehicle-list/vehicle-list.component';
@@ -32,24 +32,24 @@ import { GenerateqrComponent } from './servicestation/generateqr/generateqr.comp
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BookingComponent } from './customerdashboard/booking/booking.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
-import { QrscannerComponent } from './qrscanner/qrscanner.component';
+
 import { ServicebookingService} from './shared/servicebooking.service';
-import { ConfirmVehicleregistrationComponent } from './admim/confirm-vehicleregistration/confirm-vehicleregistration.component';
+
 import { SidenavadminComponent } from './sidenavadmin/sidenavadmin.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AdminComponent } from './admindashboard/admin/admin.component';
 import { SidenavAdminComponent } from './sidenav-admin/sidenav-admin.component';
 import { PayementupdateComponent } from './admindashboard/payementupdate/payementupdate.component';
-import { LicenseComponent } from './license/license.component';
-import { LicenceTypeComponent } from './licence-type/licence-type.component';
-import { ConfirmvehicleregComponent } from './admindashboard/confirmvehiclereg/confirmvehiclereg.component';
-import { OngoingReservationsComponent } from './customerdashboard/ongoing-reservations/ongoing-reservations.component';
+
+
+
+
 import { VehicleAssistanceComponent } from './admindashboard/vehicle-assistance/vehicle-assistance.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import * as html2canvas from 'html2canvas';
-import { ContactpageComponent } from './contactpage/contactpage.component';
-import { AboutpageComponent } from './aboutpage/aboutpage.component';
+
+
 import { PushNotificationService } from 'ngx-push-notifications';
 import { PushnotificationComponent } from './pushnotification/pushnotification.component';
 import { NewNavbarComponent } from './new-navbar/new-navbar.component';
@@ -62,27 +62,27 @@ import { NewNavbarComponent } from './new-navbar/new-navbar.component';
     ForgotPassordComponent,
     VerifyEmailComponent,
     NavbarComponent,
-    HomepageComponent,
+    
     SidenavComponent,
-    ProfileComponent,
+    
     VehiclesComponent,
     VehicleComponent,
     VehicleListComponent,
     GenerateqrComponent,
     BookingComponent,
-    QrscannerComponent,
-    ConfirmVehicleregistrationComponent,
+    
+    
     SidenavadminComponent,
     AdminComponent,
     SidenavAdminComponent,
     PayementupdateComponent,
-    LicenseComponent,
-    LicenceTypeComponent,
-    ConfirmvehicleregComponent,
-    OngoingReservationsComponent,
+   
+  
+   
+    
     VehicleAssistanceComponent,
-    ContactpageComponent,
-    AboutpageComponent,
+   
+   
     PushnotificationComponent,
     NewNavbarComponent,
     

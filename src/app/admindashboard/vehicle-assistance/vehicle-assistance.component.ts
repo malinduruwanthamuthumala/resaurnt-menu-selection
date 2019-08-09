@@ -13,12 +13,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./vehicle-assistance.component.css']
 })
 export class VehicleAssistanceComponent implements OnInit {
-  title: string = 'My first AGM project';
-  public lat: number = 24.799448;
-  public lng: number = 120.979021;
-
-  public origin: any;
-  public destination: any;
+  
   list=[];
   status='';
   breakdownef:AngularFirestoreCollection<Breakdown>;

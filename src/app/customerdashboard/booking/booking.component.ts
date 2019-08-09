@@ -42,9 +42,9 @@ chickensub=false;
 table='';
 capp=false;
 
-imgsrc='../../assets/image/w.jpg';
-textservice='welcome to luckvin auto care systems online reservation page';
-cardtitle='Luckvin Auto Care Services';
+imgsrc='../../assets/image/g.png';
+textservice='welcome to My burger order placement page';
+cardtitle='My burger foods';
 reservedateref:AngularFirestoreCollection<Servicebooking>;
 reservedate$:Observable<Servicebooking[]>;
 
@@ -80,7 +80,7 @@ id1='';
 
   ngOnInit() {
   
-  this.resetForm();
+  
   this.SetUserID();
   console.log(this.usersCustomerId);
 
@@ -280,100 +280,9 @@ id1='';
       
       
     }
-    carwashpackagepayement(){
-      this.currentpriceref=this.afs.collection('prices',ref=>ref.where('identifier','==','001'));
-      this.currentprice$=this.currentpriceref.valueChanges();
-      this.totalpayment=this.totalpayment-this.carashpackageprice;
-      console.log(this.bodywash)
-      if(this.bodywash=='quickwash'){
-        
-        this.carashpackageprice=0;  
-        this. currentprice$.subscribe(val => {
-          this.carashpackageprice=this.carashpackageprice+val[0].quickwash;
-          this.totalpayment=this.totalpayment+this.carashpackageprice;
-          this.price=val[0].quickwash;
-        })
-        
-      }
-      if(this.bodywash=='detailedwash'){
-        this.carashpackageprice=0;
-        this. currentprice$.subscribe(val => {
-          this.carashpackageprice=this.carashpackageprice+val[0].detailledwash;
-          this.totalpayment=this.totalpayment+this.carashpackageprice;
-          this.price=val[0].detailledwash;
-        })
-      }
-      if(this.bodywash=='washwax'){
-        this.carashpackageprice=0;
-        this. currentprice$.subscribe(val => {
-          this.carashpackageprice=this.carashpackageprice+val[0].washandax;
-          this.totalpayment=this.totalpayment+this.carashpackageprice;
-          this.price=val[0].washandax;
-        })
-      }
-      if(this.bodywash=='autowash'){
-        this.carashpackageprice=0;
-        this. currentprice$.subscribe(val => {
-          this.carashpackageprice=this.carashpackageprice+val[0].autowash;
-          this.totalpayment=this.totalpayment+this.carashpackageprice;
-          this.price=val[0].autowash;
-        })
-      }
-     
-    }
-    selectdate(form:NgForm){
-      console.log("working");
-      const date=this.resdate;
-      console.log(date);
-      this.reservedateref=this.afs.collection('service',ref=>ref.where('resdate','==',date));
-      this.reservedate$=this.reservedateref.valueChanges();
-
-      this.reservedate$.subscribe(val => {
-        if(val.length >= 8){
-         this.formvalidity=true;
-         this.showunavailability=false;
-        
-         
-        }
-        else{
-          const numberofreservations=val.length;
-          this.remaining=8-numberofreservations;
-          this.showremaining=false;
-        }
-        
-        }
-  );
   
-    }
     
-  resetForm(form ? :NgForm){
-    if(form != null)
-      form.resetForm();
-    
-     
-     this.service1.formData={
-      id:null,
-
-      bodywash:'',
-      resdate:new Date(),
-      interior:false,
-      lubrication:false,
-      undercariagedegrease:false,
-      tyredashdress:false,
-      exteriorwax:false,
-      engine_oil_and_filter_change:false,
-      engineclean:false,
-      flushreplace:false,
-      enginescan:false,
-     vehiclereg :'',
-     
-      status:'',
-      tp:'',
-     }
-  
-     
-  
-    }
+ 
 
     onSubmit(form:NgForm){
       this.afAuth.authState.subscribe(user => {
@@ -386,7 +295,7 @@ id1='';
       data.total=this.totalpayment;
       data.customerid=this.usersCustomerId; 
       this.firestore.collection('orders').add(data);
-      this.resetForm();
+      
       this.toastr.success('My burger','your order has been placed')  
     }
 }
